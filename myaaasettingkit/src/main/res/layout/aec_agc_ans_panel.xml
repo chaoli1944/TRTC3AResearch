@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/ll_aaa_panel"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="音质设置"
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
+
+
+        <TextView
+            android:id="@+id/tv_close_panel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:paddingRight="20dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:text="关闭"
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
+
+    </FrameLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="采集方式"
+        android:textSize="9dp"
+        android:textColor="#AAAAAA"
+        android:paddingLeft="5dp"
+        android:background="#1f3d6c"/>
+
+    <RadioGroup
+        android:id="@+id/rg_audioCap"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rb_sdkCapAudio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="SDK采集音频"
+            android:textColor="#AAAAAA" />
+
+        <RadioButton
+            android:id="@+id/rb_cusCapAudio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="自定义音频"
+            android:textColor="#AAAAAA" />
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="音质"
+        android:textSize="9dp"
+        android:textColor="#AAAAAA"
+        android:paddingLeft="5dp"
+        android:background="#1f3d6c"/>
+    <RadioGroup
+        android:id="@+id/rg_audioQuality"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rb_speech"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="流畅"
+            android:textColor="#AAAAAA" />
+
+        <RadioButton
+            android:id="@+id/rb_default"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="标准"
+            android:textColor="#AAAAAA" />
+
+        <RadioButton
+            android:id="@+id/rb_music"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="高音质"
+            android:textColor="#AAAAAA" />
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="声音通道"
+        android:textSize="9dp"
+        android:textColor="#AAAAAA"
+        android:paddingLeft="5dp"
+        android:background="#1f3d6c"/>
+
+    <RadioGroup
+        android:id="@+id/rg_volumeType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+
+        <RadioButton
+            android:checked="true"
+            android:id="@+id/rb_VOIP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="VOIP"
+            android:textColor="#AAAAAA" />
+        <RadioButton
+            android:id="@+id/rb_mediaAndVOIP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="麦下media麦上VOIP"
+            android:textColor="#AAAAAA" />
+
+        <RadioButton
+            android:id="@+id/rb_media"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="media"
+            android:textColor="#AAAAAA" />
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="3A设置"
+        android:textSize="9dp"
+        android:textColor="#AAAAAA"
+        android:paddingLeft="5dp"
+        android:background="#1f3d6c"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:text="AEC"
+            android:textColor="@android:color/white"
+            android:textSize="14sp" />
+
+        <SeekBar
+            android:id="@+id/sb_aec_level_panel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="6"
+            android:max="120"
+            android:maxHeight="3dp"
+            android:minHeight="3dp"
+            android:padding="10dp"
+            android:progress="0"
+            android:progressDrawable="@drawable/audio_effect_setting_seekbar_shape"
+            android:thumb="@drawable/audio_effect_setting_shape_seekbar_btn" />
+
+        <TextView
+            android:id="@+id/tv_aec_level_panel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.5"
+            android:gravity="left"
+            android:padding="10dp"
+            android:text="0"
+            android:textColor="@android:color/white"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:text="ANS"
+            android:textColor="@android:color/white"
+            android:textSize="14sp" />
+
+        <SeekBar
+            android:id="@+id/sb_ans_level_panel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="6"
+            android:max="120"
+            android:maxHeight="3dp"
+            android:minHeight="3dp"
+            android:padding="10dp"
+            android:progress="0"
+            android:progressDrawable="@drawable/audio_effect_setting_seekbar_shape"
+            android:thumb="@drawable/audio_effect_setting_shape_seekbar_btn" />
+
+        <TextView
+            android:id="@+id/tv_ans_level_panel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.5"
+            android:gravity="left"
+            android:padding="10dp"
+            android:text="0"
+            android:textColor="@android:color/white"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:text="AGC"
+            android:textColor="@android:color/white"
+            android:textSize="14sp" />
+
+        <SeekBar
+            android:id="@+id/sb_agc_level_panel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="6"
+            android:max="120"
+            android:maxHeight="3dp"
+            android:minHeight="3dp"
+            android:padding="10dp"
+            android:progress="0"
+            android:progressDrawable="@drawable/audio_effect_setting_seekbar_shape"
+            android:thumb="@drawable/audio_effect_setting_shape_seekbar_btn" />
+
+        <TextView
+            android:id="@+id/tv_agc_level_panel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.5"
+            android:gravity="left"
+            android:padding="10dp"
+            android:text="0"
+            android:textColor="@android:color/white"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="手机音量设置"
+        android:textSize="9dp"
+        android:textColor="#AAAAAA"
+        android:paddingLeft="5dp"
+        android:background="#1f3d6c"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_voip_volume_max"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:text="通话音量"
+            android:textColor="@android:color/white"
+            android:textSize="14sp" />
+
+        <SeekBar
+            android:id="@+id/sb_viop_volume"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="6"
+            android:max="120"
+            android:maxHeight="3dp"
+            android:minHeight="3dp"
+            android:padding="10dp"
+            android:progress="0"
+            android:progressDrawable="@drawable/audio_effect_setting_seekbar_shape"
+            android:thumb="@drawable/audio_effect_setting_shape_seekbar_btn" />
+
+        <TextView
+            android:id="@+id/tv_voip_volume"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.5"
+            android:gravity="left"
+            android:padding="10dp"
+            android:text="0"
+            android:textColor="@android:color/white"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_media_volume_max"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:text="媒体音量"
+            android:textColor="@android:color/white"
+            android:textSize="14sp" />
+
+        <SeekBar
+            android:id="@+id/sb_media_volume"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="6"
+            android:max="120"
+            android:maxHeight="3dp"
+            android:minHeight="3dp"
+            android:padding="10dp"
+            android:progress="0"
+            android:progressDrawable="@drawable/audio_effect_setting_seekbar_shape"
+            android:thumb="@drawable/audio_effect_setting_shape_seekbar_btn" />
+
+        <TextView
+            android:id="@+id/tv_media_volume"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.5"
+            android:gravity="left"
+            android:padding="10dp"
+            android:text="0"
+            android:textColor="@android:color/white"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="dumpSDKAudioFrame"
+        android:textSize="9dp"
+        android:textColor="#AAAAAA"
+        android:paddingLeft="5dp"
+        android:background="#1f3d6c"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <CheckBox
+            android:id="@+id/ch_capRaw"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#AAAAAA"
+            android:textSize="9dp"
+            android:singleLine="true"
+            android:text="采集原声"/>
+        <CheckBox
+            android:id="@+id/ch_locPro"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#AAAAAA"
+            android:textSize="9dp"
+            android:singleLine="true"
+            android:text="前处理后"/>
+        <CheckBox
+            android:id="@+id/ch_remUser"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#AAAAAA"
+            android:textSize="9dp"
+            android:singleLine="true"
+            android:text="远端个人"/>
+        <CheckBox
+            android:id="@+id/ch_mixPlay"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#AAAAAA"
+            android:textSize="9dp"
+            android:singleLine="true"
+            android:text="远端所有"/>
+        <CheckBox
+            android:id="@+id/ch_mixAll"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#AAAAAA"
+            android:textSize="9dp"
+            android:singleLine="true"
+            android:text="所有音频"/>
+    </LinearLayout>
+
+    <TextView
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="dumpSDKAudioFrameFormat"
+        android:textSize="9dp"
+        android:textColor="#AAAAAA"
+        android:paddingLeft="5dp"
+        android:background="#1f3d6c"/>
+    <RadioGroup
+        android:visibility="gone"
+        android:id="@+id/rg_dumpformat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rb_dumpPCM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PCM"
+            android:textColor="#AAAAAA" />
+
+        <RadioButton
+            android:id="@+id/rb_dumpWAV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="WAV"
+            android:textColor="#AAAAAA" />
+    </RadioGroup>
+
+
+</LinearLayout>

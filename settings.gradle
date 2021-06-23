@@ -1,0 +1,7 @@
+include ':mylibrary'
+include ':myaaasettingkit'
+include ':audioeffectsettingkit'
+include ':rtc'
+include ':debug'
+include ':app'
+rootProject.name = "TRTC3AResearch"

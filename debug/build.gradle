@@ -1,0 +1,32 @@
+apply plugin: 'com.android.library'
+apply plugin: 'bugly'
+
+bugly {
+    appId = '6e3737e3a0' // 注册时分配的App ID
+    appKey = '2f6c222e-75db-481c-8342-3c44ae6802d8' // 注册时分配的App Key
+}
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+}
+

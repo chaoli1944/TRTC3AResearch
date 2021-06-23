@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:voiceView="http://schemas.android.com/apk/res-auto"
+    android:background="@color/rtc_main_bg">
+
+
+    <com.tencent.rtmp.ui.TXCloudVideoView
+        android:id="@+id/trtc_tc_cloud_view_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:id="@+id/ll_trtc_mute_video_default"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="center"
+            android:src="@mipmap/rtc_user_portrait"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+
+        <ImageView
+            android:id="@+id/trtc_ic_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:background="@mipmap/rtc_ic_back" />
+
+        <TextView
+            android:id="@+id/trtc_tv_room_number"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="15dp"
+            android:gravity="center_horizontal"
+            android:text="1111"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+
+    <com.tencent.rtmp.ui.TXCloudVideoView
+        android:id="@+id/trtc_tc_cloud_view_1"
+        android:layout_width="90dp"
+        android:layout_height="160dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="80dp"/>
+
+    <com.tencent.rtmp.ui.TXCloudVideoView
+        android:id="@+id/trtc_tc_cloud_view_2"
+        android:layout_width="90dp"
+        android:layout_height="160dp"
+        android:layout_above="@id/trtc_tc_cloud_view_1"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="10dp"/>
+
+    <com.tencent.rtmp.ui.TXCloudVideoView
+        android:id="@+id/trtc_tc_cloud_view_3"
+        android:layout_width="90dp"
+        android:layout_height="160dp"
+        android:layout_above="@id/trtc_tc_cloud_view_2"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="10dp"/>
+
+
+    <com.tencent.rtmp.ui.TXCloudVideoView
+        android:id="@+id/trtc_tc_cloud_view_4"
+        android:layout_width="90dp"
+        android:layout_height="160dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="80dp"/>
+
+
+    <com.tencent.rtmp.ui.TXCloudVideoView
+        android:id="@+id/trtc_tc_cloud_view_5"
+        android:layout_width="90dp"
+        android:layout_height="160dp"
+        android:layout_above="@id/trtc_tc_cloud_view_4"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="10dp"/>
+
+
+    <com.tencent.rtmp.ui.TXCloudVideoView
+        android:id="@+id/trtc_tc_cloud_view_6"
+        android:layout_width="90dp"
+        android:layout_height="160dp"
+        android:layout_above="@id/trtc_tc_cloud_view_5"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="10dp"/>
+
+    <com.carlos.voiceline.mylibrary.VoiceLineView
+        android:id="@+id/voicLine"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="50dp"
+        android:background="#00000000"
+        voiceView:maxVolume="120"
+        voiceView:middleLine="@android:color/holo_red_light"
+        voiceView:middleLineHeight="1dp"
+        voiceView:fineness="one"
+        voiceView:rectSpace="2dp"
+        voiceView:rectWidth="4dp"
+        voiceView:sensibility="one"
+        voiceView:viewMode="rect"
+        android:visibility="gone"
+        voiceView:voiceLine="@android:color/holo_red_light" />
+    <TextView
+        android:layout_below="@+id/voicLine"
+        android:id="@+id/tv_localvolume_sb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:textColor="@android:color/holo_red_light"
+        android:text="my"/>
+
+    <com.carlos.voiceline.mylibrary.VoiceLineView
+        android:id="@+id/voicLine2"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@+id/tv_localvolume_sb"
+        android:background="#00000000"
+        voiceView:maxVolume="120"
+        voiceView:middleLine="@android:color/holo_red_light"
+        voiceView:middleLineHeight="1dp"
+        voiceView:fineness="one"
+        voiceView:rectSpace="2dp"
+        voiceView:rectWidth="4dp"
+        voiceView:sensibility="one"
+        voiceView:viewMode="rect"
+        android:visibility="gone"
+        voiceView:voiceLine="@android:color/holo_red_light" />
+    <TextView
+        android:layout_below="@+id/voicLine2"
+        android:id="@+id/tv_remotevolume_sb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:textColor="@android:color/holo_red_light"
+        android:text="totalVolume"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
+        android:layout_marginBottom="30dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/trtc_ll_controller"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/trtc_btn_switch_camera"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/rtc_switch_camera" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/trtc_btn_mute_audio"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/rtc_mute_audio" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/trtc_btn_mute_video"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/rtc_mute_video" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/trtc_btn_3A"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@mipmap/aaa" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/trtc_btn_log_info"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@mipmap/rtc_log_button" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <com.tencent.liteav.audiosettingkit.AudioEffectPanel
+        android:id="@+id/anchor_audio_panel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_alignParentBottom="true"
+        tools:visibility="gone"/>
+
+
+
+
+</RelativeLayout>
