@@ -30,4 +30,35 @@ TRTC腾讯实时音视频，音频3A调用示例
 
 ![S10622-143151622](https://user-images.githubusercontent.com/49272458/122881316-9cc53d00-d36d-11eb-8442-d522076ab848.jpg)
 
+### dumpSDKAudioFrame
+勾选后就会把sdk回调的pcm数据，存到本地文件，存储路径是sd卡/audioResearch/
+
+<table>
+  <tr>
+    <th width="200px" style="text-align:center">API</th>
+    <th width="260px" style="text-align:center">描述</th>
+  </tr>
+  <tr>
+    <td style="text-align:center">onCapturedRawAudioFrame</td>
+    <td style="text-align:center">本地麦克风采集到的音频数据回调。</td>
+  </tr>
+  <tr>
+    <td style="text-align:center">onLocalProcessedAudioFrame</td>
+    <td style="text-align:center">本地采集并经过音频模块前处理后的音频数据回调。</td>
+  </tr>
+  <tr>
+    <td style="text-align:center">onRemoteUserAudioFrame</td>
+    <td style="text-align:center">混音前的每一路远程用户的音频数据，即混音前的各路原始数据。例如，对某一路音频进行文字转换时，您必须使用该路音频的原始数据。</td>
+  </tr>
+  <tr>
+    <td style="text-align:center">onMixedPlayAudioFrame</td>
+    <td style="text-align:center">各路音频数据混合后送入喇叭播放的音频数据。</td>
+  </tr>
+  <tr>
+    <td style="text-align:center">onMixedAllAudioFrame</td>
+    <td style="text-align:center">SDK所有音频数据混合后的数据回调（包括采集音频数据和所有播放音频数据）。</td>
+  </tr>
+</table>
+
+
 
