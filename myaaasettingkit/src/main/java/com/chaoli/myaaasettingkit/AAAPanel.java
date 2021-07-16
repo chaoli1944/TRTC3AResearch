@@ -271,6 +271,7 @@ public class AAAPanel extends FrameLayout {
                 } else {
                     aaaSettingParam.setDumpCapturedRawAudioFrameFlag(false);
                 }
+                isDumpAudioFormat();
             }
         });
         ch_locPro.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -281,6 +282,7 @@ public class AAAPanel extends FrameLayout {
                 } else {
                     aaaSettingParam.setDumpLocalProcessedAudioFrameFlag(false);
                 }
+                isDumpAudioFormat();
             }
         });
         ch_remUser.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -291,6 +293,7 @@ public class AAAPanel extends FrameLayout {
                 } else {
                     aaaSettingParam.setDumpRemoteUserAudioFrameFlag(false);
                 }
+                isDumpAudioFormat();
             }
         });
         ch_mixPlay.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -301,6 +304,7 @@ public class AAAPanel extends FrameLayout {
                 } else {
                     aaaSettingParam.setDumpMixedPlayAudioFrameFlag(false);
                 }
+                isDumpAudioFormat();
             }
         });
         ch_mixAll.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -311,6 +315,7 @@ public class AAAPanel extends FrameLayout {
                 } else {
                     aaaSettingParam.setDumpMixedAllAudioFrameFlag(false);
                 }
+                isDumpAudioFormat();
             }
         });
         rg_dumpformat.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -323,6 +328,22 @@ public class AAAPanel extends FrameLayout {
                 }
             }
         });
+    }
+
+    private void isDumpAudioFormat(){
+        if(aaaSettingParam.isDumpCapturedRawAudioFrameFlag()
+                |aaaSettingParam.isDumpLocalProcessedAudioFrameFlag()
+                |aaaSettingParam.isDumpRemoteUserAudioFrameFlag()
+                |aaaSettingParam.isDumpMixedPlayAudioFrameFlag()
+                |aaaSettingParam.isDumpMixedAllAudioFrameFlag()){
+            for(int i=0;i<rg_dumpformat.getChildCount();i++){
+                rg_dumpformat.getChildAt(i).setEnabled(true);
+            }
+        }else{
+            for(int i=0;i<rg_dumpformat.getChildCount();i++){
+                rg_dumpformat.getChildAt(i).setEnabled(false);
+            }
+        }
     }
 
     private synchronized int calcAAA(int progress) {
