@@ -162,7 +162,14 @@ public class RTCActivity extends AppCompatActivity implements View.OnClickListen
         SimpleDateFormat df = new SimpleDateFormat("MM-dd-HH-mm-ss");//设置日期格式
         enterRoomTime = df.format(new Date());// new Date()为获取当前系统时间
         folder = "audioResearch" + File.separator + enterRoomTime + "_" + mRoomId + "_" + mUserId;
-        filePCMName = enterRoomTime + "_AEC" + AEC + "_AGC" + AGC + "_ANS" + ANS + ".pcm";
+        filePCMName = enterRoomTime + "_AEC" + AEC + "_AGC" + AGC + "_ANS" + ANS;
+        //dump 两种格式
+        int format = aaaSettingParam.getDumpAudioFormat();
+        if(format==0){
+            filePCMName+=".pcm";
+        }else {
+            filePCMName+=".wav";
+        }
 
         if (aaaSettingParam.isDumpMixedAllAudioFrameFlag() ||
                 aaaSettingParam.isDumpMixedPlayAudioFrameFlag() ||
@@ -184,7 +191,7 @@ public class RTCActivity extends AppCompatActivity implements View.OnClickListen
 
         sbLocalVolume = new StringBuffer();
         sbRemoteVolume = new StringBuffer();
-        sbLocalVolume.append("sampleRate:16kHZ  channel:1  16bit");
+        sbLocalVolume.append("sampleRate:48kHZ  channel:1  16bit");
         sbLocalVolume.append("\r\n");
         sbLocalVolume.append(mUserId + " volume:000");
         sbRemoteVolume.append("sampleRate:48kHZ  channel:2  16bit");
