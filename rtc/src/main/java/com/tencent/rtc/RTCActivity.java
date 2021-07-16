@@ -107,7 +107,7 @@ public class RTCActivity extends AppCompatActivity implements View.OnClickListen
     private int AEC = 0;
     private int AGC = 0;
     private int ANS = 0;
-    private int sampleRate = 16000;
+    private int sampleRate = 48000;
     private int channel = 1;
     private int capAudioType = 0;
 

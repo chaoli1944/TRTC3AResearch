@@ -435,17 +435,7 @@
             android:text="所有音频"/>
     </LinearLayout>
 
-    <TextView
-        android:visibility="gone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="dumpSDKAudioFrameFormat"
-        android:textSize="9dp"
-        android:textColor="#AAAAAA"
-        android:paddingLeft="5dp"
-        android:background="#1f3d6c"/>
     <RadioGroup
-        android:visibility="gone"
         android:id="@+id/rg_dumpformat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -458,6 +448,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="PCM"
+            android:enabled="false"
+            android:checked="true"
             android:textColor="#AAAAAA" />
 
         <RadioButton
@@ -465,6 +457,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="WAV"
+            android:enabled="false"
             android:textColor="#AAAAAA" />
     </RadioGroup>
 

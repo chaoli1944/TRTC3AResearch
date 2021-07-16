@@ -195,12 +195,20 @@ public class FileUtils {
 
                 //如果为追加则在原来的基础上继续写文件
                 raf = new RandomAccessFile(file, "rw");
-                if(fileLength==0){
-                    writeHeader(raf,bufferLength+36,bufferLength,sampleRate,channel,16);
-                    raf.seek(44);
-                }else{
-                    writeHeader(raf,fileLength+bufferLength,fileLength+bufferLength-36,sampleRate,channel,16);
+                int format = AAASettingParam.getInstance().getDumpAudioFormat();
+
+                if(format==0){
+                    //dump PCM格式
                     raf.seek(fileLength);
+                }else {
+                    //dump WAV格式
+                    if(fileLength==0){
+                        writeHeader(raf,bufferLength+44,bufferLength,sampleRate,channel,16);
+                        raf.seek(44);
+                    }else{
+                        writeHeader(raf,fileLength+bufferLength,fileLength+bufferLength-44,sampleRate,channel,16);
+                        raf.seek(fileLength);
+                    }
                 }
 
                 raf.write(buffer);

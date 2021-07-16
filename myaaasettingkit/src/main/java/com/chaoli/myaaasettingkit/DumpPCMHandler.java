@@ -13,7 +13,7 @@ import java.io.File;
 public class DumpPCMHandler extends Handler {
 
     String folder = "";
-    int sampleRate = 16000;
+    int sampleRate = 48000;
     int channel = 1;
 
     public DumpPCMHandler(@NonNull Looper looper) {
@@ -67,7 +67,7 @@ public class DumpPCMHandler extends Handler {
                 byte[] data5 = he5.data;
                 String filePCMName5 = he5.filePCMName;
                 String folder5 = he5.folder;
-                FileUtils.writeFileToSDCard(data5, folder5, "mixAll_" + filePCMName5, true, false, 48000, 1);
+                FileUtils.writeFileToSDCard(data5, folder5, "mixAll_" + filePCMName5, true, false, 48000, 2);
                 Log.i("chaoli", "handleMessage: 通信5");
                 break;
         }
